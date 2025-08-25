@@ -1,0 +1,38 @@
+# Laravel Application
+APP_NAME="Your App Name"
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://your-domain.vercel.app
+
+# Database Configuration
+DB_CONNECTION=mysql
+DB_HOST=your-db-host
+DB_PORT=3306
+DB_DATABASE=your-database-name
+DB_USERNAME=your-username
+DB_PASSWORD=your-password
+
+# Cache & Session
+CACHE_DRIVER=array
+SESSION_DRIVER=cookie
+SESSION_LIFETIME=120
+
+# Queue
+QUEUE_CONNECTION=sync
+
+# Mail Configuration (optional)
+MAIL_MAILER=smtp
+MAIL_HOST=your-mail-host
+MAIL_PORT=587
+MAIL_USERNAME=your-mail-username
+MAIL_PASSWORD=your-mail-password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@yourdomain.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+# Logging
+LOG_CHANNEL=stderr
+LOG_LEVEL=debug
+
+# Security
+SESSION_SECURE_COOKIE=true
