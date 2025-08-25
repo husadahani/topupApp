@@ -1,0 +1,75 @@
+{
+    "version": 2,
+    "framework": null,
+    "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
+    "outputDirectory": "public",
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/health",
+            "dest": "/api/health.php"
+        },
+        {
+            "src": "/ssr/(.*)",
+            "dest": "/api/ssr.php"
+        },
+        {
+            "src": "/migrate",
+            "dest": "/api/migrate.php"
+        },
+        {
+            "src": "/seed",
+            "dest": "/api/seed.php"
+        },
+        {
+            "src": "/clear-cache",
+            "dest": "/api/clear-cache.php"
+        },
+        {
+            "src": "/maintenance",
+            "dest": "/api/maintenance.php"
+        },
+        {
+            "src": "/queue",
+            "dest": "/api/queue.php"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://your-domain.vercel.app",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "/var/task/node_modules/.bin"
+    },
+    "build": {
+        "env": {
+            "APP_ENV": "production",
+            "APP_DEBUG": "false"
+        }
+    }
+}

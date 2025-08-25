@@ -1,0 +1,44 @@
+# Laravel specific
+.env
+.env.*
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/app/*
+bootstrap/cache/*
+
+# Development files
+node_modules
+npm-debug.log
+yarn-error.log
+.git
+.gitignore
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+DOCKER_README.md
+
+# Testing
+tests
+phpunit.xml
+.phpunit.result.cache
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts (will be built by Vercel)
+public/build
+public/hot
+
+# Temporary files
+*.tmp
+*.temp
