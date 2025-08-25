@@ -3,9 +3,31 @@
     "framework": null,
     "buildCommand": "chmod +x vercel-build.sh && ./vercel-build.sh",
     "outputDirectory": "public",
+    "installCommand": "composer install --no-dev --optimize-autoloader",
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.6.0"
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/health.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/ssr.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/migrate.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/seed.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/clear-cache.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/maintenance.php": {
+            "runtime": "vercel-php@0.7.0"
+        },
+        "api/queue.php": {
+            "runtime": "vercel-php@0.7.0"
         }
     },
     "routes": [
@@ -71,5 +93,8 @@
             "APP_ENV": "production",
             "APP_DEBUG": "false"
         }
-    }
+    },
+    "devCommand": "php artisan serve --host 0.0.0.0 --port $PORT",
+    "regions": ["iad1"],
+    "maxDuration": 30
 }
